@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Tarampampam\GuzzleUrlMock\Tests;
+namespace AvtoDev\GuzzleUrlMock\Tests;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RequestOptions;
-use Tarampampam\GuzzleUrlMock\UrlsMockHandler;
+use AvtoDev\GuzzleUrlMock\UrlsMockHandler;
 
 /**
- * @coversDefaultClass \Tarampampam\GuzzleUrlMock\UrlsMockHandler
+ * @coversDefaultClass \AvtoDev\GuzzleUrlMock\UrlsMockHandler
  */
 class UrlsMockHandlerTest extends \PHPUnit\Framework\TestCase
 {

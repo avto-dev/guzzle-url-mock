@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tarampampam\GuzzleUrlMock;
+namespace AvtoDev\GuzzleUrlMock;
 
 use Exception;
 use OutOfBoundsException;

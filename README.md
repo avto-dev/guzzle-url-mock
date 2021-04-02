@@ -18,7 +18,7 @@ This package for easy mocking URLs _(fixed and regexps-based)_ using [Guzzle 6/G
 Require this package with composer using the following command:
 
 ```shell
-$ composer require tarampampam/guzzle-url-mock "^1.3"
+$ composer require avto-dev/guzzle-url-mock "^1.5"
 ```
 
 > Installed `composer` is required ([how to install composer][getcomposer]).
@@ -35,7 +35,7 @@ Create Guzzle client instance with passing handler instance, setup it, and make 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use Tarampampam\GuzzleUrlMock\UrlsMockHandler;
+use AvtoDev\GuzzleUrlMock\UrlsMockHandler;
 
 $handler = new UrlsMockHandler;
 $client  = new Client([
@@ -91,25 +91,25 @@ If you will find any package errors, please, [make an issue][link_create_issue] 
 
 This is open-sourced software licensed under the [MIT License][link_license].
 
-[badge_packagist_version]:https://img.shields.io/packagist/v/tarampampam/guzzle-url-mock.svg?maxAge=180
-[badge_php_version]:https://img.shields.io/packagist/php-v/tarampampam/guzzle-url-mock.svg?longCache=true
-[badge_build_status]:https://img.shields.io/github/workflow/status/tarampampam/guzzle-url-mock/tests?maxAge=30
-[badge_coverage]:https://img.shields.io/codecov/c/github/tarampampam/guzzle-url-mock/master.svg?maxAge=60
-[badge_downloads_count]:https://img.shields.io/packagist/dt/tarampampam/guzzle-url-mock.svg?maxAge=180
-[badge_license]:https://img.shields.io/packagist/l/tarampampam/guzzle-url-mock.svg?longCache=true
-[badge_release_date]:https://img.shields.io/github/release-date/tarampampam/guzzle-url-mock.svg?style=flat-square&maxAge=180
-[badge_commits_since_release]:https://img.shields.io/github/commits-since/tarampampam/guzzle-url-mock/latest.svg?style=flat-square&maxAge=180
-[badge_issues]:https://img.shields.io/github/issues/tarampampam/guzzle-url-mock.svg?style=flat-square&maxAge=180
-[badge_pulls]:https://img.shields.io/github/issues-pr/tarampampam/guzzle-url-mock.svg?style=flat-square&maxAge=180
-[link_releases]:https://github.com/tarampampam/guzzle-url-mock/releases
-[link_packagist]:https://packagist.org/packages/tarampampam/guzzle-url-mock
-[link_build_status]:https://github.com/tarampampam/guzzle-url-mock/actions
-[link_coverage]:https://codecov.io/gh/tarampampam/guzzle-url-mock/
-[link_changes_log]:https://github.com/tarampampam/guzzle-url-mock/blob/master/CHANGELOG.md
-[link_issues]:https://github.com/tarampampam/guzzle-url-mock/issues
-[link_create_issue]:https://github.com/tarampampam/guzzle-url-mock/issues/new/choose
-[link_commits]:https://github.com/tarampampam/guzzle-url-mock/commits
-[link_pulls]:https://github.com/tarampampam/guzzle-url-mock/pulls
-[link_license]:https://github.com/tarampampam/guzzle-url-mock/blob/master/LICENSE
+[badge_packagist_version]:https://img.shields.io/packagist/v/avto-dev/guzzle-url-mock.svg?maxAge=180
+[badge_php_version]:https://img.shields.io/packagist/php-v/avto-dev/guzzle-url-mock.svg?longCache=true
+[badge_build_status]:https://img.shields.io/github/workflow/status/avto-dev/guzzle-url-mock/tests?maxAge=30
+[badge_coverage]:https://img.shields.io/codecov/c/github/avto-dev/guzzle-url-mock/master.svg?maxAge=60
+[badge_downloads_count]:https://img.shields.io/packagist/dt/avto-dev/guzzle-url-mock.svg?maxAge=180
+[badge_license]:https://img.shields.io/packagist/l/avto-dev/guzzle-url-mock.svg?longCache=true
+[badge_release_date]:https://img.shields.io/github/release-date/avto-dev/guzzle-url-mock.svg?style=flat-square&maxAge=180
+[badge_commits_since_release]:https://img.shields.io/github/commits-since/avto-dev/guzzle-url-mock/latest.svg?style=flat-square&maxAge=180
+[badge_issues]:https://img.shields.io/github/issues/avto-dev/guzzle-url-mock.svg?style=flat-square&maxAge=180
+[badge_pulls]:https://img.shields.io/github/issues-pr/avto-dev/guzzle-url-mock.svg?style=flat-square&maxAge=180
+[link_releases]:https://github.com/avto-dev/guzzle-url-mock/releases
+[link_packagist]:https://packagist.org/packages/avto-dev/guzzle-url-mock
+[link_build_status]:https://github.com/avto-dev/guzzle-url-mock/actions
+[link_coverage]:https://codecov.io/gh/avto-dev/guzzle-url-mock/
+[link_changes_log]:https://github.com/avto-dev/guzzle-url-mock/blob/master/CHANGELOG.md
+[link_issues]:https://github.com/avto-dev/guzzle-url-mock/issues
+[link_create_issue]:https://github.com/avto-dev/guzzle-url-mock/issues/new/choose
+[link_commits]:https://github.com/avto-dev/guzzle-url-mock/commits
+[link_pulls]:https://github.com/avto-dev/guzzle-url-mock/pulls
+[link_license]:https://github.com/avto-dev/guzzle-url-mock/blob/master/LICENSE
 [getcomposer]:https://getcomposer.org/download/
 [guzzle_link]:https://github.com/guzzle/guzzle
