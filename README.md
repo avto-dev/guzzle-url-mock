@@ -18,7 +18,7 @@ This package for easy mocking URLs _(fixed and regexps-based)_ using [Guzzle 6/G
 Require this package with composer using the following command:
 
 ```shell
-$ composer require avto-dev/guzzle-url-mock "^1.3"
+$ composer require avto-dev/guzzle-url-mock "^1.5"
 ```
 
 > Installed `composer` is required ([how to install composer][getcomposer]).
