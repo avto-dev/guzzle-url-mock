@@ -1,5 +1,5 @@
 {
-    "name": "tarampampam/guzzle-url-mock",
+    "name": "avto-dev/guzzle-url-mock",
     "description": "URLs (fixed and regexps-based) mock handler for Guzzle 6/7",
     "keywords": [
         "guzzle",
@@ -11,8 +11,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "tarampampam",
-            "homepage": "https://github.com/tarampampam"
+            "name": "avto-dev",
+            "homepage": "https://github.com/avto-dev"
         }
     ],
     "require": {
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tarampampam\\GuzzleUrlMock\\": "src/"
+            "AvtoDev\\GuzzleUrlMock\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tarampampam\\GuzzleUrlMock\\Tests\\": "tests/"
+            "AvtoDev\\GuzzleUrlMock\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -48,7 +48,7 @@
         ]
     },
     "support": {
-        "issues": "https://github.com/tarampampam/guzzle-url-mock/issues",
-        "source": "https://github.com/tarampampam/guzzle-url-mock"
+        "issues": "https://github.com/avto-dev/guzzle-url-mock/issues",
+        "source": "https://github.com/avto-dev/guzzle-url-mock"
     }
 }
