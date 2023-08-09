@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## Unreleased
+
+### Changed
+
+- Minimal require PHP version now is `8.0`
+- Composer version up to `2.5.8`
+- Up minimal `guzzle` version to `7.0`
+- Up minimal `phpstan` version to `1.10`
+- Up minimal `phpunit` version `9.6`
+
+### Fixed
+
+- Replaced the use of deprecated methods from `guzzlehttp/promises`
+
 ## v1.5.0
 
 ### Changed
