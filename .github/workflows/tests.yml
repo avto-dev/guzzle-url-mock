@@ -6,31 +6,21 @@ on:
       - master
     tags-ignore:
       - '**'
-    paths-ignore:
-      - '**.md'
   pull_request:
-    paths-ignore:
-      - '**.md'
   schedule:
     - cron: '0 0 * * 0' # once in a week, docs: <https://git.io/JvxXE#onschedule>
 
 jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
   tests:
     name: PHP ${{ matrix.php }} (${{ matrix.setup }} setup)
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
-        setup: ['basic', 'lowest']
-        php: ['7.2', '7.3', '7.4', '8.0']
-        include:
-          - php: '7.2'
-            setup: 'basic'
-            coverage: 'true'
-          - php: '7.4'
-            setup: 'basic'
-            coverage: 'true'
+        setup: [basic, lowest]
+        coverage: [yes]
+        php: ['8.0', '8.1', '8.2']
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -43,12 +33,12 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
 
       - name: Get Composer Cache Directory # Docs: <https://github.com/actions/cache/blob/master/examples.md#php---composer>
         id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+        run: echo "output_dir=dir::$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies # Docs: <https://github.com/actions/cache/blob/master/examples.md#php---composer>
         uses: actions/cache@v3.3.1
         with:
-          path: ${{ steps.composer-cache.outputs.dir }}
+          path: ${{ steps.composer-cache.outputs.output_dir }}
           key: ${{ runner.os }}-composer-${{ matrix.setup }}-${{ hashFiles('**/composer.json') }}
           restore-keys: ${{ runner.os }}-composer-
 
@@ -78,4 +68,19 @@ jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-ac
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/clover.xml
+          flags: php
           fail_ci_if_error: false
+
+  lint-changelog:
+    name: Lint changelog file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Lint changelog file
+        uses: docker://avtodev/markdown-lint:v1 # Action page: <https://github.com/avto-dev/markdown-lint>
+        with:
+          rules: '/lint/rules/changelog.js'
+          config: '/lint/config/changelog.yml'
+          args: './CHANGELOG.md'

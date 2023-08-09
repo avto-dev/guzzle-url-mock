@@ -102,7 +102,12 @@ class UrlsMockHandler implements \Countable
                 $options['on_headers']($response);
             } catch (Exception $e) {
                 $msg      = 'An error was encountered during the on_headers event';
-                $response = new RequestException($msg, $request, $response, $e);
+                $response = new RequestException(
+                    $msg,
+                    $request,
+                    $response instanceof ResponseInterface ? $response : null,
+                    $e,
+                );
             }
         }
 
@@ -111,8 +116,8 @@ class UrlsMockHandler implements \Countable
         }
 
         $response = $response instanceof \Exception
-            ? \GuzzleHttp\Promise\rejection_for($response)
-            : \GuzzleHttp\Promise\promise_for($response);
+            ? \GuzzleHttp\Promise\Create::rejectionFor($response)
+            : \GuzzleHttp\Promise\Create::promiseFor($response);
 
         return $response->then(
             function ($value) use ($request, $options) {
@@ -137,7 +142,7 @@ class UrlsMockHandler implements \Countable
             function ($reason) use ($request, $options) {
                 $this->invokeStats($request, $options, null, $reason);
 
-                return \GuzzleHttp\Promise\rejection_for($reason);
+                return \GuzzleHttp\Promise\Create::rejectionFor($reason);
             }
         );
     }
@@ -280,10 +285,14 @@ class UrlsMockHandler implements \Countable
 
         foreach ($this->uri_patterns as $uri_pattern => $rule_array) {
             $uri_pattern = $this->removeMethodFromPattern($uri_pattern);
-            if (\preg_match($uri_pattern, $uri) && \mb_strtoupper($rule_array[static::METHOD]) === $method) {
+            /** @var string $rule_method */
+            $rule_method = $rule_array[static::METHOD];
+            if (\preg_match($uri_pattern, $uri) && \mb_strtoupper($rule_method) === $method) {
                 return $rule_array[static::RESPONSE];
             }
         }
+
+        return null;
     }
 
     /**
