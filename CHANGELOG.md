@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][keepachangelog] and this project adheres to [Semantic Versioning][semver].
 
+## Unreleased
+
+### Fixed
+
+- Deprecated implicit marking of parameter as nullable in `invokeStats()` method
+
 ## v1.6.0
 
 ### Changed
