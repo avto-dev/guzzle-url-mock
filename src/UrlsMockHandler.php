@@ -332,7 +332,7 @@ class UrlsMockHandler implements \Countable
     protected function invokeStats(
         RequestInterface $request,
         array $options,
-        ResponseInterface $response = null,
+        ?ResponseInterface $response = null,
         $reason = null
     ): void {
         if (isset($options['on_stats']) && \is_callable($on_stats = $options['on_stats'])) {
